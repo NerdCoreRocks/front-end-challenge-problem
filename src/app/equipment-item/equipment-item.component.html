@@ -1,0 +1,25 @@
+<div *ngIf="!selected; then isNotSelected else isSelected"></div>
+<ng-template #isNotSelected>
+    <div 
+        (click)="onClick()" 
+        [ngStyle]="{
+            'backgroundColor': equipmentItem.manufacturer && equipmentItem.equipment_type ? 'white' : 'yellow'
+        }">
+        <p>{{ equipmentItem.description ? equipmentItem.description : 'No Description' }}</p>
+        <p>{{ equipmentItem.manufacturer ? equipmentItem.manufacturer : 'No Manufacturer' }}</p>
+        <p>{{ equipmentItem.equipment_type ? equipmentItem.equipment_type : 'No Equipment Type' }}</p>
+    </div>
+</ng-template>
+<ng-template #isSelected>
+    <div 
+        (click)="onClick()" 
+        [ngStyle]="{
+            'backgroundColor': equipmentItem.manufacturer && equipmentItem.equipment_type ? 'white' : 'yellow'
+        }">
+        <p>{{ equipmentItem.description ? equipmentItem.description : 'No Description' }}</p>
+        <p>{{ equipmentItem.manufacturer ? equipmentItem.manufacturer : 'No Manufacturer' }}</p>
+        <p>{{ equipmentItem.equipment_type ? equipmentItem.equipment_type : 'No Equipment Type' }}</p>
+        <p>{{ equipmentItem.model_number ? equipmentItem.model_number : 'No Model Number' }}</p>
+        <p>{{ equipmentItem.serial_number ? equipmentItem.serial_number : 'No Serial Number' }}</p>
+    </div>
+</ng-template>

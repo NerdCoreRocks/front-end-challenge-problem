@@ -1,0 +1,5 @@
+<ul class="list-group">
+    <li *ngFor="let equipmentItem of equipment" class="list-group-item" [hidden]="!equipmentItem.active">
+       <app-equipment-item [equipmentItem]="equipmentItem"></app-equipment-item>
+    </li>
+</ul>
